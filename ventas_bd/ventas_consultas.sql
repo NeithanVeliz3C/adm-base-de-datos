@@ -132,6 +132,29 @@ SELECT *
 FROM usuarios -- esta columna selecciona todos los elementos de la tabla usuario
 WHERE created_at BETWEEN '2025-05-01' AND '2025-05-31'; -- Esta consulta obtiene los usuarios cuya fecha de creación (`created_at`) se encuentra entre el 1 y el 31 de mayo de 2025.
 -- BETWEEN y AND incluyen ambos extremos del rango
+SELECT * 
+FROM usuarios -- selecciona todos los elementos ingresados en usuarios
+WHERE tipo_usuario_id = 2 AND nombre LIKE 'C%'; -- la siguiente consulta filtra los resultados para que muestre únicamente aquellos que cumplen con las condiciones, como que el id de tipo usuario sea 2 y su nombre empiece con C
+
+SELECT *
+from usuarios -- selecciona todos los elementos ingresados en usuarios
+where created_by = 1 OR contraseña LIKE 'l%';
+-- la siguiente consulta filtra los resultados para que muestre aquellas inserciones que hayan sido creadas por el usuario número 1 o su contraseña empiece por la letra load
+
+SELECT *
+FROM detalle_ventas -- selecciona todos los elementos ingresados en detalle ventas
+WHERE precio_unitario = 15000 AND venta_id = 4;
+-- la siguiente consulta filtra los resultados para que muestre las ventas que cumplan con las condiciones, como que el precio unitario sea 15000 y que su id sea 4
+
+SELECT *
+FROM usuarios -- selecciona todos los elementos ingresados en usuarios
+WHERE correo LIKE 'c%' OR contraseña LIKE 'a%';
+-- la siguiente consulta filtra los resultados para que muestre aquellos que cumplan con las condiciones, como que el correo inicie con C o que la contraseña inicie con A
+
+SELECT *
+FROM productos -- selecciona todos los elementos ingresados en productos
+WHERE nombre LIKE 'M%' and precio between 15000 and 20000;
+-- la siguiente consulta filtra los resultados para que muestre aquellos que cumplan con las condiciones, que el nombre del producto empiece con m y que su precio sea entre 15000 y 20000
 
 
 
